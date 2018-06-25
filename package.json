@@ -17,10 +17,13 @@
     "redux",
     "alternativ"
   ],
-  "author": "'Dennis",
+  "author": "'ddennis.dk aka fantastisk.dk",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ddennis/denux/issues"
   },
-  "homepage": "https://github.com/ddennis/denux#readme"
+  "homepage": "https://github.com/ddennis/denux#readme",
+  "dependencies": {
+    "react": ">=16.3.0"
+  }
 }
