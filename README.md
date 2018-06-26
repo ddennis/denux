@@ -3,6 +3,10 @@ An example on how to make a reusable solutions using the new Context API. It use
 
 Try an example on codesandbox: https://codesandbox.io/s/xvjx5n5vpw
 
+### install
+
+      npm i denux --save
+
 Basic setup:
 
     export default class DenuxApp extends Component {
@@ -42,7 +46,7 @@ Basic setup:
 
       
       
-##### Consume the data :
+##### Consume the data somewhere in you application:
       
       export const SomeComponent = () => (
             <Denux.Consumer>      
