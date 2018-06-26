@@ -10,6 +10,7 @@ Try an example on codesandbox: https://codesandbox.io/s/xvjx5n5vpw
 ### Basic setup:
 
 ```javascript
+
 export default class DenuxApp extends Component {
 
 	constructor(props){
@@ -43,23 +44,26 @@ export default class DenuxApp extends Component {
 		);
 	}
 }    
+
 ```      
       
 ### Consume the data somewhere in you application:
 ```javascript
+
 export const SomeComponent = () => (
 <Denux.Consumer>
-	{
-		(context) =>{
-			return (
-				<div>
-					<h1>Items amount = {context.list.items.length}</h1>
-				</div>
-			)
-		}
-	}
+{
+    (context) =>{
+        return (
+            <div>
+                <h1>Items amount = {context.list.items.length}</h1>
+            </div>
+        )
+    }
+}
 </Denux.Consumer>
 );
+
 ```      
 
 ****      
