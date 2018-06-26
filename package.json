@@ -24,7 +24,11 @@
     "url": "https://github.com/ddennis/denux/issues"
   },
   "homepage": "https://github.com/ddennis/denux#readme",
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-transform-object-entries": "1.0.0",
+    "babel-polyfill": "6.26.0"
+  },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-preset-env": "1.7.0",
