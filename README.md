@@ -1,7 +1,4 @@
-# denux
-React state management using the Context API - and the principle of Redux
-  
- ## Denux.js
+# Denux.js
 An example on how to make a reusable solutions using the new Context API. It uses the basic concepts from Redux like reducers/combineReducers and dispatcher. 
 
     export default class DenuxApp extends Component {
