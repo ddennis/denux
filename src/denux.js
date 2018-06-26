@@ -37,6 +37,13 @@ export default class Denux extends Component {
 	render() {
 		return <Context.Provider value={this.state}>{this.props.children}</Context.Provider>;
 	}
-
 }
 
+/*
+
+"peerDependencies": {
+    "react": ">=15.0.1",
+    "react-dom": ">=15.0.1"
+},
+
+*/
