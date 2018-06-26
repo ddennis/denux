@@ -1,6 +1,10 @@
 # Denux.js
 An example on how to make a reusable solutions using the new Context API. It uses the basic concepts from Redux like reducers/combineReducers and dispatcher. 
 
+Try an example on codesandbox: https://codesandbox.io/s/xvjx5n5vpw
+
+Basic setup:
+
     export default class DenuxApp extends Component {
 
       constructor(props){
