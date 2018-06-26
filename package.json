@@ -23,7 +23,5 @@
     "url": "https://github.com/ddennis/denux/issues"
   },
   "homepage": "https://github.com/ddennis/denux#readme",
-  "dependencies": {
-    "react": ">=16.3.0"
-  }
+  "dependencies": {}
 }
