@@ -7,7 +7,7 @@ Try an example on codesandbox: https://codesandbox.io/s/xvjx5n5vpw
 
       npm i denux --save
 
-Basic setup:
+### Basic setup:
 
     export default class DenuxApp extends Component {
 
@@ -46,7 +46,7 @@ Basic setup:
 
       
       
-##### Consume the data somewhere in you application:
+### Consume the data somewhere in you application:
       
       export const SomeComponent = () => (
             <Denux.Consumer>      
