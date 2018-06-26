@@ -1,6 +1,6 @@
 {
   "name": "denux",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react state management with the Context API",
   "main": "./lib/denux.js",
   "scripts": {
