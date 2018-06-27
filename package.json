@@ -1,6 +1,6 @@
 {
   "name": "denux",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react state management with the Context API",
   "main": "./lib/denux.js",
   "scripts": {
@@ -24,8 +24,7 @@
     "url": "https://github.com/ddennis/denux/issues"
   },
   "homepage": "https://github.com/ddennis/denux#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=16.4.1",
     "react-dom": ">=16.4.1"
