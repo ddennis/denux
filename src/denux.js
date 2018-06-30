@@ -16,10 +16,6 @@ export default class Denux extends Component {
 
 		if( process.env.NODE_ENV !== 'production'  ){
 
-
-
-
-
 			if(hasNestedObject(reducers) ){
 				throw new TypeError('a value in the reducer is not a function. Please see the console')
 				return {}
@@ -46,17 +42,26 @@ export default class Denux extends Component {
 		}
 	};
 
+	componentDidMount(){
+		if( process.env.NODE_ENV !== 'production'  ){
+			if(this.props.reducers ){
+				console.error("DENUX ERROR:", "Please use the prop name 'reducer' not reducers ");
+				throw new TypeError("Reducer obj should be provided as prop name 'reducer' see console")
+			}
 
-	render() {
+			if(!this.props.reducer ){
+				console.log("DENUX NOTICE:", "You did not provide a reducer obj");
+			}
+		}
+	}
+
+
+	render(){
 		return <Context.Provider value={this.state}>{this.props.children}</Context.Provider>;
 	}
-}
 
-/*
+};
 
-"peerDependencies": {
-    "react": ">=15.0.1",
-    "react-dom": ">=15.0.1"
-},
 
-*/
+
+
