@@ -1,8 +1,11 @@
 # Denux.js
-An example on how to make a reusable solutions using the new Context API. It uses the basic concepts from Redux like reducers/combineReducers and dispatcher. 
+Simple state management without all of Redux. A reusable solutions using the new Context API. 
+Denux uses the basic concepts from Redux like reducers and dispatch, it also supports combineReducers.
+ 
 
 ### Try It 
 You can try an interactive version here: https://codesandbox.io/s/xvjx5n5vpw
+included is also an example on updating state when the operation is async 
 
 
 ### install
@@ -48,6 +51,29 @@ export default class DenuxApp extends Component {
 }    
 
 ```      
+
+### A simple reducer function, which always takes the state and a action
+```javascript
+
+export const listReducer = (state = {} , action) => {
+
+	if (action.type === "ADD") {
+		// Copy the current array of items
+		const newArr = [...state.items];
+		//Push the new item
+		newArr.push(action.item);
+		// return the current state object with the new array
+		return { ...state, items: newArr };
+	}
+
+	// else just return state
+	return state;
+
+};
+
+
+```  
+
       
 ### Consume the data somewhere in you application:
 ```javascript
