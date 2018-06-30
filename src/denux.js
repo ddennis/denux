@@ -1,10 +1,10 @@
 /**
- * Created by @author @ddennis - ddennis.dk aka fantastisk.dk/works aka meresukker.dk on 25-06-2018.
+ * Created by @author @ddennis - ddennis.dk aka fantastisk.dk/works aka meresukker.dk on 20-06-2018.
  */
 
 
 import React, { Component } from 'react'
-
+import hasNestedObject from './utils/hasNestedObject'
 const Context = React.createContext();
 
 export default class Denux extends Component {
@@ -12,11 +12,24 @@ export default class Denux extends Component {
 	static Consumer = Context.Consumer;
 
 	// Static utility function - stolen from redux
-	static combineReducers = (reducers) => {
-		return (state = {}, action) => {
+	static combineReducers(reducers){
+
+		if( process.env.NODE_ENV !== 'production'  ){
+
+
+
+
+
+			if(hasNestedObject(reducers) ){
+				throw new TypeError('a value in the reducer is not a function. Please see the console')
+				return {}
+			}
+		}
+
+		return (state = {}, action) =>{
 			return Object.keys(reducers).reduce(
-				(nextState, key) => {
-					nextState[key] = reducers[key](state[key], action );
+				(nextState, key) =>{
+					nextState[key] = reducers[key](state[key], action);
 					return nextState;
 				},
 				{}
