@@ -74,6 +74,30 @@ export const listReducer = (state = {} , action) => {
 
 ```  
 
+
+### Update the state by dispatching an action:
+```javascript
+
+export const SomeOtherComponent = () => (
+<Denux.Consumer>
+{
+    (context) =>{
+        return (
+            <button onClick={(e ) => {
+                e.preventDefault();
+                context.dispatch({type:"ADD", item:"FOUR"});
+            }}>
+                Add Item
+            </button>
+        )
+    }
+}
+</Denux.Consumer>
+);
+
+```
+
+
       
 ### Consume the data somewhere in you application:
 ```javascript
@@ -93,6 +117,8 @@ export const SomeComponent = () => (
 );
 
 ```      
+
+
 
 ****      
 credits to Cubanpete for the name https://github.com/cubanpete
