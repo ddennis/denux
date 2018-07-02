@@ -23,7 +23,7 @@ export default class DenuxApp extends Component {
 
 		this.myStateObj = {
 			list:{
-				items:["ONE", "TWO", "THREE"]
+				items:["1", "2", "3"]
 			}
 		};
 
@@ -57,16 +57,22 @@ export default class DenuxApp extends Component {
 
 export const listReducer = (state  , action) => {
 
-	//the state is the items array, since we are using combineReduceres     
-            
-    if (action.type === "ADD") {
-        // Copy the current array of items
-        const newArr = [...state];
-        //Push the new item
-        newArr.push(action.item);
-        // return the new array which is now the current state
-        return  newArr ;
-    }
+	//
+ 	// the state is the list obj:
+    // list:{ items:["1","2","3"],	isLoading:false }
+    //
+    // This is because we are using combineReduceres
+    //
+
+    
+	if (action.type === "ADD") {
+		// Copy the current array of items
+		const newArr = [...state.items];
+		//Push the new item
+		newArr.push(action.item);
+		// return the new array which is now the current state
+		return  {...state, items:newArr} ;
+	}
 
 	// else just return state
 	return state;
@@ -85,12 +91,19 @@ export const SomeOtherComponent = () => (
 {
     (context) =>{
         return (
-            <button onClick={(e ) => {
-                e.preventDefault();
-                context.dispatch({type:"ADD", item:"FOUR"});
-            }}>
-                Add Item
-            </button>
+			<div>
+			    <div>
+			        {context.list.items}
+			    </div>
+			
+			    <button onClick={(e) =>{
+			        e.preventDefault();
+			        const count = context.list.items.length +1
+			
+			        context.dispatch({type:"ADD", item:" - " +count.toString()})
+			
+			    }}> ADD </button>
+			</div>
         )
     }
 }
