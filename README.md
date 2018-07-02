@@ -18,36 +18,37 @@ included is also an example on updating state when the operation is async
 
 export default class DenuxApp extends Component {
 
-	constructor(props){
-		super(props);
+constructor(props){
+	super(props);
 
-		this.myStateObj = {
-			list:{
-				items:["1", "2", "3"]
-			}
-		};
-
-		// name your reducers so they match the part of the state object the handle
-		this.appReducers = Denux.combineReducers({
-			// the list reducer should be named list
-			list:listReducer
-		});
+	this.myStateObj = {
+		list:{
+			items:["1", "2", "3"],
+			isLoading:false
+		}
 	};
 
-	render(){
-		return (
-			<div className="App">
-				<Denux
-					// pass the combined reduceres or single reducer
-					reducer={this.appReducers}
-					// pass in the initial state object
-					state={this.myStateObj}
-				>
-					<SomeComponent/>
-				</Denux>
-			</div>
-		);
-	}
+	// name your reducers so they match the part of the state object the handle
+	this.appReducers = Denux.combineReducers({
+		// the list reducer should be named list
+		list:listReducer
+	});
+};
+
+render(){
+return (
+	<div className="App">
+	<Denux
+		// pass the combined reduceres or single reducer
+		reducer={this.appReducers}
+		// pass in the initial state object
+		state={this.myStateObj}
+	>
+		<SomeComponent/>
+	</Denux>
+	</div>
+);
+}
 }    
 
 ```      
@@ -57,7 +58,7 @@ export default class DenuxApp extends Component {
 
 export const listReducer = (state  , action) => {
 
-	//
+ //
  // the state is the list obj:
  // list:{ items:["1","2","3"],	isLoading:false }
  //
