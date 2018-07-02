@@ -7,6 +7,8 @@ import React, { Component } from 'react'
 import hasNestedObject from './utils/hasNestedObject'
 const Context = React.createContext();
 
+const isDevelopment = window.process && window.process.env && window.process.env.NODE_ENV && window.process.env.NODE_ENV !== 'production';
+
 export default class Denux extends Component {
 
 	static Consumer = Context.Consumer;
@@ -14,8 +16,7 @@ export default class Denux extends Component {
 	// Static utility function - stolen from redux
 	static combineReducers(reducers){
 
-		if( process.env.NODE_ENV !== 'production'  ){
-
+		if( isDevelopment){
 			if(hasNestedObject(reducers) ){
 				throw new TypeError('a value in the reducer is not a function. Please see the console')
 				return {}
@@ -43,7 +44,7 @@ export default class Denux extends Component {
 	};
 
 	componentDidMount(){
-		if( process.env.NODE_ENV !== 'production'  ){
+		if( isDevelopment ){
 			if(this.props.reducers ){
 				console.error("DENUX ERROR:", "Please use the prop name 'reducer' not reducers ");
 				throw new TypeError("Reducer obj should be provided as prop name 'reducer' see console")
