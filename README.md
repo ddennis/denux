@@ -55,16 +55,18 @@ export default class DenuxApp extends Component {
 ### A simple reducer function, which always takes the state and a action
 ```javascript
 
-export const listReducer = (state = {} , action) => {
+export const listReducer = (state  , action) => {
 
-	if (action.type === "ADD") {
-		// Copy the current array of items
-		const newArr = [...state.items];
-		//Push the new item
-		newArr.push(action.item);
-		// return the current state object with the new array
-		return { ...state, items: newArr };
-	}
+	//the state is the items array, since we are using combineReduceres     
+            
+    if (action.type === "ADD") {
+        // Copy the current array of items
+        const newArr = [...state];
+        //Push the new item
+        newArr.push(action.item);
+        // return the new array which is now the current state
+        return  newArr ;
+    }
 
 	// else just return state
 	return state;
