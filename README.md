@@ -1,3 +1,7 @@
+# Don't use this - use Zustand https://github.com/react-spring/zustand
+--------------------------
+
+
 # Denux.js
 Simple state management without all of Redux. A reusable solutions using the new Context API. 
 Denux uses the basic concepts from Redux like reducers and dispatch, it also supports combineReducers.
